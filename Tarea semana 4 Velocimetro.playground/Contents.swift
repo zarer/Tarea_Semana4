@@ -5,23 +5,23 @@
 import UIKit
 
 
-enum Velocidad:Int{
+enum Velocidades:Int{
     
     case Apagado = 0, VelocidadBaja = 20, VelocidadMedia = 50, VelocidadAlta = 120
     
-    init(velocidadInicial:Velocidad){
+    init(velocidadInicial:Velocidades){
         self = velocidadInicial
     }
 }
 
 
 class Auto {
-    var velocidad:Velocidad
+    var velocidad:Velocidades
     
     init(){
         
         
-        velocidad = Velocidad(velocidadInicial: Velocidad.Apagado)
+        velocidad = Velocidades(velocidadInicial: Velocidades.Apagado)
     }
     
     func cambioDeVelocidad()->(actual:Int, velocidadEnCadena:String)
@@ -31,22 +31,22 @@ class Auto {
         switch self.velocidad.rawValue
             
         {
-        case Velocidad.Apagado.rawValue:
-            self.velocidad = Velocidad.VelocidadBaja;
+        case Velocidades.Apagado.rawValue:
+            self.velocidad = Velocidades.VelocidadBaja;
             
             resultado.velocidadEnCadena = "Apagado"
-        case Velocidad.VelocidadBaja.rawValue:
+        case Velocidades.VelocidadBaja.rawValue:
             
-            self.velocidad = Velocidad.VelocidadMedia
+            self.velocidad = Velocidades.VelocidadMedia
             resultado.velocidadEnCadena = "Velocidad Baja"
             
-        case Velocidad.VelocidadMedia.rawValue:
-            self.velocidad = Velocidad.VelocidadAlta
+        case Velocidades.VelocidadMedia.rawValue:
+            self.velocidad = Velocidades.VelocidadAlta
             
             resultado.velocidadEnCadena = "Velocidad Media"
-        case Velocidad.VelocidadAlta.rawValue:
+        case Velocidades.VelocidadAlta.rawValue:
             
-            self.velocidad = Velocidad.VelocidadMedia
+            self.velocidad = Velocidades.VelocidadMedia
             resultado.velocidadEnCadena = "Velocidad Alta"
             
         default:
